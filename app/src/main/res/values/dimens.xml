@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- dialog text -->
+
+  <dimen name="dialog_text.margin.start">24dp</dimen>
+  <dimen name="dialog_text.margin.end">24dp</dimen>
+  <dimen name="dialog_text.margin.left">24dp</dimen>
+  <dimen name="dialog_text.margin.right">24dp</dimen>
+
+  <!-- dialog title -->
+
+  <dimen name="dialog_title.size">18sp</dimen>
+  <dimen name="dialog_title.margin.top">20dp</dimen>
+
+  <!-- dialog message -->
+
+  <dimen name="dialog_message.size">16sp</dimen>
+  <dimen name="dialog_message.line_spacing">5dp</dimen>
+  <dimen name="dialog_message.margin.top">14dp</dimen>
+
+  <!-- dialog button -->
+
+  <dimen name="dialog_button.size">15sp</dimen>
+  <dimen name="dialog_button.min_width">64dp</dimen>
+  <dimen name="dialog_button.padding.right">8dp</dimen>
+  <dimen name="dialog_button.padding.left">8dp</dimen>
+
+  <!-- dialog permission -->
+
+  <dimen name="dialog_permission.constraint_layout.buttons.margin.top">14dp</dimen>
+  <dimen name="dialog_permission.constraint_layout.buttons.margin.left">24dp</dimen>
+  <dimen name="dialog_permission.constraint_layout.buttons.margin.right">16dp</dimen>
+  <dimen name="dialog_permission.button.next_step.width">0dp</dimen>
+  <dimen name="dialog_permission.button.next_step.margin.bottom">8dp</dimen>
+  <dimen name="dialog_permission.button.cancel.width">0dp</dimen>
+  <dimen name="dialog_permission.button.cancel.margin.bottom">8dp</dimen>
+  <dimen name="dialog_permission.button.cancel.margin.end">8dp</dimen>
+  <dimen name="dialog_permission.button.cancel.margin.right">8dp</dimen>
+
+  <!-- dialog error -->
+
+  <dimen name="dialog_error.button.ok.width">0dp</dimen>
+  <dimen name="dialog_error.button.ok.margin.bottom">8dp</dimen>
+  <dimen name="dialog_error.button.ok.margin.top">14dp</dimen>
+  <dimen name="dialog_error.button.ok.margin.right">16dp</dimen>
+
+  <!-- gray button selector -->
+
+  <dimen name="gray_button_selector.focus.radius">2dp</dimen>
+
+  <!-- gray button pressed selector -->
+
+  <dimen name="gray_button_pressed_selector.radius">2dp</dimen>
+
+  <!-- state error -->
+
+  <dimen name="state_error.swipe_refresh_layout.error.view_size">0dp</dimen>
+  <dimen name="state_error.swipe_refresh_layout.error.margin.start">20dp</dimen>
+  <dimen name="state_error.swipe_refresh_layout.error.margin.end">20dp</dimen>
+  <dimen name="state_error.swipe_refresh_layout.error.margin.left">20dp</dimen>
+  <dimen name="state_error.swipe_refresh_layout.error.margin.right">20dp</dimen>
+  <dimen name="state_error.image_view.error_icon.view_size">96dp</dimen>
+  <dimen name="state_error.image_view.error_icon.margin.bottom">8dp</dimen>
+  <dimen name="state_error.text_view.error_message.margin.bottom">8dp</dimen>
+  <dimen name="state_error.image_view.refresh_icon.view_size">16dp</dimen>
+  <dimen name="state_error.text_view.refresh_message.margin.start">8dp</dimen>
+  <dimen name="state_error.text_view.refresh_message.margin.left">8dp</dimen>
+  <dimen name="state_error.constraint_layout.refresh_box.width">0dp</dimen>
+
+  <!-- item user -->
+
+  <dimen name="item_user.constraint_layout.item_user.padding.top">8dp</dimen>
+  <dimen name="item_user.constraint_layout.item_user.padding.bottom">8dp</dimen>
+  <dimen name="item_user.constraint_layout.item_user.padding.left">16dp</dimen>
+  <dimen name="item_user.constraint_layout.item_user.padding.right">16dp</dimen>
+  <dimen name="item_user.image_view.icon.view_size">40dp</dimen>
+  <dimen name="item_user.text_view.name.width">0dp</dimen>
+  <dimen name="item_user.text_view.name.margin.left">16dp</dimen>
+  <dimen name="item_user.text_view.name.size">16sp</dimen>
+  <dimen name="item_user.constraint_layout.info_box.width">0dp</dimen>
+  <dimen name="item_user.constraint_layout.progress_box.width">0dp</dimen>
+  <dimen name="item_user.progress_bar.loading.height">40dp</dimen>
+
+
+</resources>

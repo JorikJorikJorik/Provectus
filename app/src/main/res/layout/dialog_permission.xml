@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/constraintLayoutPermissionDialog"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <TextView
+    android:id="@+id/textViewPermissionTitle"
+    style="@style/DialogTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+  <TextView
+    android:id="@+id/textViewPermissionMessage"
+    style="@style/DialogMessage"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewPermissionTitle"/>
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/constraintLayoutButtons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dialog_permission.constraint_layout.buttons.margin.top"
+    android:layout_marginStart="@dimen/dialog_permission.constraint_layout.buttons.margin.left"
+    android:layout_marginEnd="@dimen/dialog_permission.constraint_layout.buttons.margin.right"
+    android:layout_marginLeft="@dimen/dialog_permission.constraint_layout.buttons.margin.left"
+    android:layout_marginRight="@dimen/dialog_permission.constraint_layout.buttons.margin.right"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewPermissionMessage">
+
+    <Button
+      android:id="@+id/buttonPermissionCancel"
+      style="@style/DialogButtonByVersion"
+      android:layout_width="@dimen/dialog_permission.button.cancel.width"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/dialog_permission.button.cancel.margin.bottom"
+      android:layout_marginEnd="@dimen/dialog_permission.button.cancel.margin.end"
+      android:layout_marginRight="@dimen/dialog_permission.button.cancel.margin.right"
+      android:text="@android:string/cancel"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toLeftOf="@+id/buttonPermissionNextStep"
+      app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+      android:id="@+id/buttonPermissionNextStep"
+      style="@style/DialogButtonByVersion"
+      android:layout_width="@dimen/dialog_permission.button.next_step.width"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/dialog_permission.button.next_step.margin.bottom"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
+
+
+  </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

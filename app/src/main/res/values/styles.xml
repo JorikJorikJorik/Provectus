@@ -1,0 +1,76 @@
+<resources>
+
+  <!--base application theme -->
+
+  <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+
+  <!--no action bar theme -->
+
+  <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <!-- app bar overlay -->
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+  </style>
+
+  <!-- popup overlay -->
+
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:background">@color/popup_overlay.background</item>
+    <item name="android:textColorPrimary">@color/popup_overlay.text_color_primary</item>
+    <item name="android:textColorSecondary">@color/popup_overlay.text_color_secondary</item>
+    <item name="android:actionMenuTextColor">@color/popup_overlay.action_menu_text_color</item>
+  </style>
+
+  <!-- dialog button -->
+
+  <style name="DialogButton">
+    <item name="android:textSize">@dimen/dialog_button.size</item>
+    <item name="android:textColor">@color/dialog_button.text</item>
+    <item name="android:minWidth">@dimen/dialog_button.min_width</item>
+    <item name="android:paddingLeft">@dimen/dialog_button.padding.left</item>
+    <item name="android:paddingRight">@dimen/dialog_button.padding.right</item>
+  </style>
+
+  <!-- dialog button by version -->
+
+  <style name="DialogButtonByVersion" parent="DialogButton">
+    <item name="android:background">@drawable/gray_button_pressed_selector</item>
+   </style>
+
+  <!-- dialog text -->
+
+  <style name="DialogText">
+    <item name="android:layout_marginStart">@dimen/dialog_text.margin.start</item>
+    <item name="android:layout_marginEnd">@dimen/dialog_text.margin.end</item>
+    <item name="android:layout_marginLeft">@dimen/dialog_text.margin.left</item>
+    <item name="android:layout_marginRight">@dimen/dialog_text.margin.right</item>
+  </style>
+
+  <!-- dialog title -->
+
+  <style name="DialogTitle" parent="DialogText">
+    <item name="android:textSize">@dimen/dialog_title.size</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/dialog_title.text_view.text</item>
+    <item name="android:layout_marginTop">@dimen/dialog_title.margin.top</item>
+  </style>
+
+  <!-- dialog message -->
+
+  <style name="DialogMessage" parent="DialogText">
+    <item name="android:textSize">@dimen/dialog_message.size</item>
+    <item name="android:lineSpacingExtra">@dimen/dialog_message.line_spacing</item>
+    <item name="android:layout_marginTop">@dimen/dialog_message.margin.top</item>
+  </style>
+
+</resources>

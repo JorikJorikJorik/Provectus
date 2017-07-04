@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+      name="randUsers"
+      type="com.jorik.taskprovectus.ViewModel.RandUsersViewModel"/>
+  </data>
+
+  <android.support.design.widget.CoordinatorLayout
+    android:id="@+id/coordinatorLayoutFragmentRandUsers"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+      android:id="@+id/swipeRefreshLayoutRandUsers"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:action_swipe='@{randUsers::uploadData}'
+      app:gone='@{randUsers.visibleStateResult}'
+      app:state='@{randUsers.stateSwipeRefreshResult}'>
+
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleListViewRandUsers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:loading_by_scroll='@{randUsers::loadingData}'
+        app:adapter='@{randUsers.randUserAdapter}'/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <include
+      layout="@layout/state_error"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:errorModel='@{randUsers.errorViewModel}'
+      app:swipeState='@{randUsers.stateSwipeRefreshError}'
+      app:visible='@{randUsers.visibleStateError}'/>
+
+    <include
+      layout="@layout/state_progress"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:visible='@{randUsers.visibleStateProgress}'/>
+
+  </android.support.design.widget.CoordinatorLayout>
+</layout>

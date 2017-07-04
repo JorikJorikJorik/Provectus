@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+      name="user"
+      type="com.jorik.taskprovectus.Network.DTO.UserDataDTO"/>
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/constraintLayoutItemUser"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/item_user.constraint_layout.item_user.padding.top"
+    android:paddingBottom="@dimen/item_user.constraint_layout.item_user.padding.bottom"
+    android:paddingLeft="@dimen/item_user.constraint_layout.item_user.padding.left"
+    android:paddingRight="@dimen/item_user.constraint_layout.item_user.padding.right">
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/constraintLayoutInfoBox"
+      android:layout_width="@dimen/item_user.constraint_layout.info_box.width"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+        android:id="@+id/imageViewIconItemUser"
+        android:layout_width="@dimen/item_user.image_view.icon.view_size"
+        android:layout_height="@dimen/item_user.image_view.icon.view_size"
+        app:image_need_cache='@{true}'
+        app:image_url='@{user.picture.thumbnail}'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+      <TextView
+        android:id="@+id/textViewNameItemUser"
+        android:layout_width="@dimen/item_user.text_view.name.width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_user.text_view.name.margin.left"
+        android:layout_marginLeft="@dimen/item_user.text_view.name.margin.left"
+        android:text='@{String.format("%s %s", user.name.first, user.name.last)}'
+        android:textColor="@color/item_user.text_view.name.text"
+        android:textSize="@dimen/item_user.text_view.name.size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageViewIconItemUser"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/constraintLayoutProgressBox"
+      android:layout_width="@dimen/item_user.constraint_layout.progress_box.width"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ProgressBar
+        android:id="@+id/progressBarLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_user.progress_bar.loading.height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:style_progress='@{true}'/>
+
+    </android.support.constraint.ConstraintLayout>
+
+  </android.support.constraint.ConstraintLayout>
+</layout>
+

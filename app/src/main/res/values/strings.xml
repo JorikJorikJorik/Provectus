@@ -1,0 +1,74 @@
+<resources>
+
+  <!-- main -->
+
+  <string name="empty_string"></string>
+  <string name="app_name">RandUser</string>
+
+  <!-- permission utils -->
+
+  <string name="permission_utils.dialog.title">Сообщение о разрешениях</string>
+  <string name="permission_utils.dialog.message.repeat">Отсутствие некоторых разрешений приведет к ограничениям в работе приложений. Предоставьте доступ.</string>
+  <string name="permission_utils.dialog.message.general">Отсутствие некоторых разрешений приведет к ограничениям в работе приложений. Вы можете предоставить доступ в настройках.</string>
+  <string name="permission_utils.dialog.action.repeat">Предоставлять</string>
+  <string name="permission_utils.dialog.action.settings">Настройки</string>
+  <string name="permission_utils.move_settings.package">package</string>
+
+  <!-- error response string -->
+
+  <string name="error_response.bad_request">Запрос недействителен. Обратитесь в службу поддержки.</string>
+  <string name="error_response.unauthorized">Отсутствующие или неверные учетные данные. Пожалуйста, заново зарегистрируйтесь.</string>
+  <string name="error_response.forbidden">Запрос отклонен или доступ запрещен. Обратитесь в службу поддержки.</string>
+  <string name="error_response.not_found">​​Ресурс запроса не найден. Обратитесь в службу поддержки.</string>
+  <string name="error_response.not_acceptable">В запросе указан недопустимый формат. Обратитесь в службу поддержки.</string>
+  <string name="error_response.gone">Этот ресурс убран. Обратитесь в службу поддержки.</string>
+  <string name="error_response.enhance_your_calm">Достигнутая скорость ограничена.</string>
+  <string name="error_response.too_many_requests">Слишком много запросов. Обратитесь в службу поддержки.</string>
+  <string name="error_response.internal_server_error">Произошла ошибка сервера. Пожалуйста, обратитесь в службу поддержки или повторите попытку позже.</string>
+  <string name="error_response.bad_gateway">Сервер был отключен или обновлен. Повторите попытку позже.</string>
+  <string name="error_response.service_unavailable">Сервер был перегружен запросами. Повторите попытку позже.</string>
+  <string name="error_response.gateway_timeout">Запрос не может быть обслужаен из-за некоторого сбоя сервера. Повторите попытку позже.</string>
+  <string name="error_response.json_error">Произошла ошибка JSON. Обратитесь в службу поддержки.</string>
+  <string name="error_response.hostname_error">Произошла ошибка при подключении имени хоста. Проверьте подключение и повторите попытку.</string>
+  <string name="error_response.timeout_error">Истек срок ожидания. Проверьте подключение и повторите попытку.</string>
+  <string name="error_response.connect_error">Не удалось подключиться к Интернету. Проверьте подключение и повторите попытку.</string>
+  <string name="error_response.network_error">Не удалось подключиться к Интернету. Проверьте подключение и повторите попытку.</string>
+  <string name="error_response.unknown_error">Произошла неизвестная ошибка. Обратитесь в службу поддержки. \nLog:</string>
+
+  <!-- error short string -->
+
+  <string name="error_short_response.bad_request">Запрос недействительный</string>
+  <string name="error_short_response.unauthorized">Неверная аутентификация</string>
+  <string name="error_short_response.forbidden">Доступ не разрешен</string>
+  <string name="error_short_response.not_found">​​Ресурс не найден</string>
+  <string name="error_short_response.not_acceptable">Неверный формат</string>
+  <string name="error_short_response.gone">Ресурс отсутствует</string>
+  <string name="error_short_response.enhance_your_calm">Достигнутая скорость ограничена</string>
+  <string name="error_short_response.too_many_requests">Слишком много запросов</string>
+  <string name="error_short_response.internal_server_error">Ошибка сервера</string>
+  <string name="error_short_response.bad_gateway">Обновление сервера</string>
+  <string name="error_short_response.service_unavailable">Сервер перегружен</string>
+  <string name="error_short_response.gateway_timeout">Ошибка сервера</string>
+  <string name="error_short_response.json_error">Ошибка JSON</string>
+  <string name="error_short_response.hostname_error">Ошибка имени хоста</string>
+  <string name="error_short_response.timeout_error">Истекло время ожидания</string>
+  <string name="error_short_response.connect_error">Ожидайте соединения</string>
+  <string name="error_short_response.network_error">Ожидайте соединения</string>
+  <string name="error_short_response.unknown_error">Неизвестная ошибка</string>
+
+  <!-- state error -->
+
+  <string name="state_error.refresh">Нажмите, чтобы повторить</string>
+
+  <!-- file utils -->
+
+  <string name="file_utils.no_file">file absent</string>
+
+  <!-- random users -->
+
+  <string name="random_users.error.empty_users">Профили не найдены</string>
+  <string name="random_users.error.repeat">Повторить</string>
+  <string name="random_users.toolbar.title">Random Users</string>
+
+
+</resources>

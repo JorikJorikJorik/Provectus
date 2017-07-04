@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- color -->
+
+  <color name="colorPrimary">#7cb342</color>
+  <color name="colorPrimaryDark">#4b830d</color>
+  <color name="colorAccent">#ffeb3b</color>
+
+  <!-- main color -->
+
+  <color name="green.light">#aee571</color>
+  <color name="green.main">#7cb342</color>
+  <color name="green.dark">#4b830d</color>
+
+  <color name="yellow.light">#ffff72</color>
+  <color name="yellow.main">#ffeb3b</color>
+  <color name="yellow.dark">#c8b900</color>
+
+  <color name="red.light">#ff7961</color>
+  <color name="red.main">#f44336</color>
+  <color name="red.dark">#ba000d</color>
+
+  <color name="blue.light">#67daff</color>
+  <color name="blue.main">#03a9f4</color>
+  <color name="blue.dark">#007ac1</color>
+
+  <color name="gray.light2">#e0e0e0</color>
+  <color name="gray.light">#efefef</color>
+  <color name="gray.main">#bdbdbd</color>
+  <color name="gray.dark">#8d8d8d</color>
+
+  <color name="white">#ffffff</color>
+  <color name="black">#000000</color>
+
+  <!-- style popup overlay -->
+
+  <color name="popup_overlay.background">@color/colorPrimary</color>
+  <color name="popup_overlay.text_color_primary">@color/white</color>
+  <color name="popup_overlay.text_color_secondary">@color/white</color>
+  <color name="popup_overlay.action_menu_text_color">@color/white</color>
+
+  <!-- dialog title -->
+
+  <color name="dialog_title.text_view.text">@color/black</color>
+
+  <!-- dialog button -->
+
+  <color name="dialog_button.text">@color/green.main</color>
+
+  <!-- gray button selector -->
+
+  <color name="gray_button_selector.focus">@color/white</color>
+
+  <!-- gray button pressed selector -->
+
+  <color name="gray_button_pressed_selector">@color/gray.light2</color>
+
+  <!-- gray button ripple -->
+
+  <color name="gray_button_ripple">@color/gray.light2</color>
+
+  <!-- state error -->
+
+  <color name="state_error.view.pressed">@color/green.dark</color>
+  <color name="state_error.view.unpressed">@color/green.main</color>
+
+  <!-- state progress -->
+
+  <color name="state_progress.progress_bar">@color/green.main</color>
+
+  <!-- swipe_refresh_layout_main_color -->
+
+  <color name="swipe_refresh_layout.scheme_colors.main">@color/green.main</color>
+
+  <!-- item user -->
+
+  <color name="item_user.text_view.name.text">@color/black</color>
+
+  <!-- snackbar -->
+
+  <color name="snackbar.error.action_text">@color/green.main</color>
+
+</resources>
