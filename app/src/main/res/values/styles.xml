@@ -17,6 +17,12 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <!-- splash screen -->
+  
+  <style name="SplashScreen" parent="AppTheme.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_screen</item>
+  </style>
+  
   <!-- app bar overlay -->
 
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">

@@ -5,6 +5,8 @@ import android.databinding.InverseBindingListener;
 import android.graphics.Bitmap;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.Drawable;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -34,14 +36,15 @@ public class BindingAdapter {
   private static final int EMPTY_DATA_RESOURCE = 0;
   private static boolean pressed;
 
-  @android.databinding.BindingAdapter(value = {"adapter", "divider", "drawable_divider"}, requireAll = false)
-  public static <T extends Adapter> void recyclerViewAdapter(RecyclerView recyclerView, T adapter, boolean divider, Drawable drawableDivider) {
-    if (divider) {
-      DividerItemDecoration itemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-//      if (drawableDivider != null) {
-//        itemDecoration.setDrawable(drawableDivider);
-//      }
-      recyclerView.addItemDecoration(itemDecoration);
+  @android.databinding.BindingAdapter(value = {"adapter", "divider_res"}, requireAll = false)
+  public static <T extends Adapter> void recyclerViewAdapter(RecyclerView recyclerView, T adapter, int dividerRes) {
+    if (dividerRes != 0) {
+      Drawable drawableDivider = VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP ? recyclerView.getContext().getDrawable(dividerRes) : recyclerView.getContext().getResources().getDrawable(dividerRes);
+      if (drawableDivider != null) {
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
+        itemDecoration.setDrawable(drawableDivider);
+        recyclerView.addItemDecoration(itemDecoration);
+      }
     }
     recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
     recyclerView.setAdapter(adapter);
@@ -86,8 +89,7 @@ public class BindingAdapter {
         public void onPrepareLoad(Drawable placeHolderDrawable) {
           if (needCache) {
             Bitmap cacheBitmap = null;
-            if (url != null)
-              cacheBitmap = cachePhotoUtils.uploadBitmap(url);
+            if (url != null) cacheBitmap = cachePhotoUtils.uploadBitmap(url);
             if (cacheBitmap != null) imageView.setImageBitmap(cacheBitmap);
             else imageView.setImageResource(R.mipmap.ic_account_image_default);
           } else imageView.setImageResource(R.mipmap.ic_account_image_default);
@@ -102,8 +104,10 @@ public class BindingAdapter {
   }
 
   @android.databinding.BindingAdapter("resource")
-  public static void setResourceImage(ImageView imageView, int resource) {
-    imageView.setImageResource(resource);
+  public static void setResourceImage(ImageView imageView, Integer resource) {
+    if (resource != null) {
+      imageView.setImageResource(resource);
+    }
   }
 
   @android.databinding.BindingAdapter(value = {"gone"})
@@ -202,5 +206,12 @@ public class BindingAdapter {
       }
     });
   }
+
+  @android.databinding.BindingAdapter(value = {"padding_left", "padding_right", "color_separator"}, requireAll = false)
+  public static void separatorSetting(View view, int paddingLeft, int paddingRight, int colorSeparator) {
+    view.setPadding(paddingLeft, view.getPaddingTop(), paddingRight, view.getPaddingBottom());
+    view.setBackgroundColor(colorSeparator);
+  }
+
 }
 

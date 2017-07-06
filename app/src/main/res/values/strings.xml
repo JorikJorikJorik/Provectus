@@ -70,5 +70,10 @@
   <string name="random_users.error.repeat">Повторить</string>
   <string name="random_users.toolbar.title">Random Users</string>
 
+  <!-- info user adapter -->
+
+  <string name="info_user_adapter.intent.type.text_plain">text/plain</string>
+  <string name="info_user_adapter.intent.extra.text">Join our community, search random user!</string>
+
 
 </resources>

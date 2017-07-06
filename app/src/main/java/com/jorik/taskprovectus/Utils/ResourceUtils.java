@@ -1,7 +1,10 @@
 package com.jorik.taskprovectus.Utils;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.content.ContextCompat;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 public class ResourceUtils {
   private static final int DEFAULT_VALUE = 0;
@@ -46,5 +49,16 @@ public class ResourceUtils {
     typedArray.recycle();
     return resourceArray;
   }
+
+  public int convertDpToPx(int dp) {
+    DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
+    return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+  }
+
+  public int convertPxToDp(int px) {
+    DisplayMetrics displaymetrics = new DisplayMetrics();
+    return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, displaymetrics);
+  }
+
 
 }

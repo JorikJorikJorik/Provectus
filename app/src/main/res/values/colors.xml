@@ -81,4 +81,25 @@
 
   <color name="snackbar.error.action_text">@color/green.main</color>
 
+  <!-- splash screen -->
+
+  <color name="splash_screen.background">@color/green.main</color>
+
+  <!-- divider info list -->
+
+  <color name="divider_info_list.solid.color">@color/gray.light2</color>
+
+  <!-- item group recycler -->
+
+  <color name="item_group_recycler.text_view.sub_header.text">@color/gray.dark</color>
+
+  <!-- item info user -->
+
+  <color name="item_info_user.text_view.main_data.text">@color/black</color>
+  <color name="item_info_user.text_view.secondary_data.text">@color/gray.dark</color>
+
+  <!-- user short info -->
+
+  <color name="user_short_info.text_view.name_user.text">@color/black</color>
+
 </resources>

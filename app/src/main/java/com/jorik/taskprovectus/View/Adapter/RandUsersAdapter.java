@@ -9,15 +9,19 @@ import android.view.View;
 import com.jorik.taskprovectus.BR;
 import com.jorik.taskprovectus.Network.DTO.UserDataDTO;
 import com.jorik.taskprovectus.R;
+import com.jorik.taskprovectus.View.Activity.BaseActivity;
+import com.jorik.taskprovectus.View.Fragment.UserShortInfoBottomSheet;
 import com.jorik.taskprovectus.databinding.ItemUserBinding;
 import java.util.List;
 
 public class RandUsersAdapter extends BaseAdapter<UserDataDTO, ItemUserBinding> {
 
+  private Context mContext;
   private ItemUserBinding binding;
 
   public RandUsersAdapter(Context context, List<UserDataDTO> listData) {
     super(context, listData);
+    mContext = context;
   }
 
   @Override
@@ -43,6 +47,15 @@ public class RandUsersAdapter extends BaseAdapter<UserDataDTO, ItemUserBinding> 
     boolean stateInfo = getListData().get(position) != null;
     stateItem(binding.constraintLayoutInfoBox, stateInfo);
     stateItem(binding.constraintLayoutProgressBox, !stateInfo);
+
+    binding.constraintLayoutItemUser.setOnLongClickListener(v -> {
+      UserDataDTO checkItem = getListData().get(position);
+      if (checkItem != null) {
+        UserShortInfoBottomSheet bottomSheet = UserShortInfoBottomSheet.getInstance(checkItem);
+        bottomSheet.show(((BaseActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
+      }
+      return true;
+    });
   }
 
   private void stateItem(View view, boolean stateInfo) {

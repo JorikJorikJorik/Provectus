@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:left="@dimen/divider_info_list.item.left">
+    <shape>
+      <size android:height="@dimen/divider_info_list.size.height"/>
+      <solid android:color="@color/divider_info_list.solid.color"/>
+    </shape>
+  </item>
+</layer-list>

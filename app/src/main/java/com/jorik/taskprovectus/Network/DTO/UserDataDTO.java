@@ -1,9 +1,11 @@
 package com.jorik.taskprovectus.Network.DTO;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserDataDTO {
+public class UserDataDTO implements Parcelable {
 
   @SerializedName("gender")
   @Expose
@@ -52,6 +54,36 @@ public class UserDataDTO {
   @SerializedName("nat")
   @Expose
   private String nat;
+
+  public UserDataDTO() {
+  }
+
+  protected UserDataDTO(Parcel in) {
+    gender = in.readString();
+    name = in.readParcelable(NameDTO.class.getClassLoader());
+    location = in.readParcelable(LocationDTO.class.getClassLoader());
+    email = in.readString();
+    login = in.readParcelable(LoginDTO.class.getClassLoader());
+    dob = in.readString();
+    registered = in.readString();
+    phone = in.readString();
+    cell = in.readString();
+    id = in.readParcelable(IdDTO.class.getClassLoader());
+    picture = in.readParcelable(PictureDTO.class.getClassLoader());
+    nat = in.readString();
+  }
+
+  public static final Creator<UserDataDTO> CREATOR = new Creator<UserDataDTO>() {
+    @Override
+    public UserDataDTO createFromParcel(Parcel in) {
+      return new UserDataDTO(in);
+    }
+
+    @Override
+    public UserDataDTO[] newArray(int size) {
+      return new UserDataDTO[size];
+    }
+  };
 
   public String getGender() {
     return gender;
@@ -147,5 +179,26 @@ public class UserDataDTO {
 
   public void setNat(String nat) {
     this.nat = nat;
+  }
+
+  @Override
+  public int describeContents() {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags) {
+    dest.writeString(gender);
+    dest.writeParcelable(name, flags);
+    dest.writeParcelable(location, flags);
+    dest.writeString(email);
+    dest.writeParcelable(login, flags);
+    dest.writeString(dob);
+    dest.writeString(registered);
+    dest.writeString(phone);
+    dest.writeString(cell);
+    dest.writeParcelable(id, flags);
+    dest.writeParcelable(picture, flags);
+    dest.writeString(nat);
   }
 }

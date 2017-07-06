@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <import type="com.jorik.taskprovectus.R"/>
+    <variable
+      name="group"
+      type="com.jorik.taskprovectus.Model.POJO.GroupRecyclerModel"/>
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/constraintLayoutInfoUserBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/item_group_recycler.constraint_layout.info_user_box.padding.bottom"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/constraintLayoutIdentifyingBox">
+
+    <TextView
+      android:id="@+id/textViewSubHeader"
+      android:textStyle="bold"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/item_group_recycler.text_view.sub_header.height"
+      android:paddingLeft="@dimen/item_group_recycler.text_view.sub_header.padding.left"
+      android:text='@{group.subHeader}'
+      android:textColor="@color/item_group_recycler.text_view.sub_header.text"
+      app:gone='@{group.subHeader != null}'
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+      android:id="@+id/imageViewInfoIcon"
+      android:layout_width="@dimen/item_group_recycler.image_view.info_icon.view_size"
+      android:layout_height="@dimen/item_group_recycler.image_view.info_icon.view_size"
+      android:layout_marginTop="@dimen/item_group_recycler.image_view.info_icon.margin.top"
+      android:layout_marginLeft="@dimen/item_group_recycler.image_view.info_icon.margin.left"
+      app:gone='@{group.iconGroup != null}'
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textViewSubHeader"
+      app:resource='@{group.iconGroup}'/>
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/recyclerViewInfo"
+      android:layout_width="@dimen/item_group_recycler.recycler_view.info.width"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="@dimen/item_group_recycler.recycler_view.info.margin.left"
+      app:adapter='@{group.adapterGroup}'
+      app:layout_constraintLeft_toRightOf="@+id/imageViewInfoIcon"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textViewSubHeader"
+      />
+
+  </android.support.constraint.ConstraintLayout>
+</layout>
+
+
+
+
+

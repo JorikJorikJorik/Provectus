@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+      name="infoUser"
+      type="com.jorik.taskprovectus.Model.POJO.InfoUserModel"/>
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/constraintLayoutInfoUser"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_info_user.constraint_layout.info_user.height"
+    android:paddingLeft="@dimen/item_info_user.constraint_layout.info_user.padding.left"
+    android:paddingRight="@dimen/item_info_user.constraint_layout.info_user.padding.right">
+
+    <TextView
+      android:id="@+id/textViewMainData"
+      android:layout_width="@dimen/item_info_user.text_view.main_data.width"
+      android:layout_height="wrap_content"
+      android:text='@{infoUser.mainData}'
+      android:textColor="@color/item_info_user.text_view.main_data.text"
+      android:textSize="@dimen/item_info_user.text_view.main_data.size"
+      app:layout_constraintBottom_toTopOf="@+id/textViewSecondaryData"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@+id/imageViewActionIcon"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView
+      android:id="@+id/textViewSecondaryData"
+      android:layout_width="@dimen/item_info_user.text_view.secondary_data.width"
+      android:layout_height="wrap_content"
+      android:text='@{infoUser.secondaryData}'
+      android:textColor="@color/item_info_user.text_view.secondary_data.text"
+      android:textSize="@dimen/item_info_user.text_view.secondary_data.size"
+      app:gone='@{infoUser.secondaryData != null}'
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="@+id/textViewMainData"
+      app:layout_constraintRight_toRightOf="@+id/textViewMainData"
+      app:layout_constraintTop_toBottomOf="@+id/textViewMainData"/>
+
+    <ImageView
+      android:id="@+id/imageViewActionIcon"
+      android:layout_width="@dimen/item_info_user.image_view.action_icon.width"
+      android:layout_height="@dimen/item_info_user.image_view.action_icon.height"
+      android:paddingTop="@dimen/item_info_user.image_view.action_icon.padding.top"
+      android:paddingBottom="@dimen/item_info_user.image_view.action_icon.padding.bottom"
+      android:paddingLeft="@dimen/item_info_user.image_view.action_icon.padding.left"
+      android:paddingRight="@dimen/item_info_user.image_view.action_icon.padding.right"
+      app:invisible='@{infoUser.iconAction != null}'
+      app:layout_constraintLeft_toRightOf="@+id/textViewMainData"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:resource='@{infoUser.iconAction}'/>
+
+
+  </android.support.constraint.ConstraintLayout>
+</layout>

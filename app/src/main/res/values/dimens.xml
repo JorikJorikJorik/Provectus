@@ -82,5 +82,53 @@
   <dimen name="item_user.constraint_layout.progress_box.width">0dp</dimen>
   <dimen name="item_user.progress_bar.loading.height">40dp</dimen>
 
+  <!-- splash screen -->
+
+  <dimen name="splash_screen.item.text.top">400dp</dimen>
+  <dimen name="divider_info_list.item.left">70dp</dimen>
+  <dimen name="divider_info_list.size.height">1dp</dimen>
+
+  <!-- user short info -->
+
+  <dimen name="user_short_info.constraint_layout.identifying_box.padding.top">8dp</dimen>
+  <dimen name="user_short_info.constraint_layout.identifying_box.padding.bottom">8dp</dimen>
+  <dimen name="user_short_info.constraint_layout.identifying_box.padding.left">16dp</dimen>
+  <dimen name="user_short_info.constraint_layout.identifying_box.padding.right">16dp</dimen>
+  <dimen name="user_short_info.image_view.icon_user.view_size">40dp</dimen>
+  <dimen name="user_short_info.constraint_layout.identifying_box.width">0dp</dimen>
+  <dimen name="user_short_info.text_view.name_user.width">0dp</dimen>
+  <dimen name="user_short_info.text_view.name_user.margin.start">16dp</dimen>
+  <dimen name="user_short_info.text_view.name_user.margin.left">16dp</dimen>
+  <dimen name="user_short_info.text_view.name_user.size">16sp</dimen>
+  <dimen name="user_short_info.recycler_view.short_info.width">0dp</dimen>
+  <dimen name="user_short_info.recycler_view.short_info.padding.top">8dp</dimen>
+
+  <!-- item group recycler -->
+
+  <dimen name="item_group_recycler.constraint_layout.info_user_box.padding.bottom">8dp</dimen>
+  <dimen name="item_group_recycler.text_view.sub_header.height">48dp</dimen>
+  <dimen name="item_group_recycler.text_view.sub_header.padding.left">14dp</dimen>
+  <dimen name="item_group_recycler.recycler_view.info.margin.left">16dp</dimen>
+  <dimen name="item_group_recycler.recycler_view.info.width">0dp</dimen>
+  <dimen name="item_group_recycler.image_view.info_icon.view_size">22dp</dimen>
+  <dimen name="item_group_recycler.image_view.info_icon.margin.top">26dp</dimen>
+  <dimen name="item_group_recycler.image_view.info_icon.margin.left">16dp</dimen>
+
+  <!-- item info user -->
+
+  <dimen name="item_info_user.constraint_layout.info_user.height">72dp</dimen>
+  <dimen name="item_info_user.constraint_layout.info_user.padding.left">16dp</dimen>
+  <dimen name="item_info_user.constraint_layout.info_user.padding.right">16dp</dimen>
+  <dimen name="item_info_user.text_view.main_data.size">16sp</dimen>
+  <dimen name="item_info_user.text_view.main_data.width">0dp</dimen>
+  <dimen name="item_info_user.text_view.secondary_data.width">0dp</dimen>
+  <dimen name="item_info_user.text_view.secondary_data.size">16sp</dimen>
+  <dimen name="item_info_user.image_view.action_icon.width">56dp</dimen>
+  <dimen name="item_info_user.image_view.action_icon.height">72dp</dimen>
+  <dimen name="item_info_user.image_view.action_icon.padding.top">28dp</dimen>
+  <dimen name="item_info_user.image_view.action_icon.padding.bottom">28dp</dimen>
+  <dimen name="item_info_user.image_view.action_icon.padding.left">20dp</dimen>
+  <dimen name="item_info_user.image_view.action_icon.padding.right">20dp</dimen>
+
 
 </resources>

@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</LinearLayout>
+  <data>
+    <import type="com.jorik.taskprovectus.R"/>
+    <variable
+      name="shortInfo"
+      type="com.jorik.taskprovectus.ViewModel.UserShortInfoViewModel"/>
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/constraintLayoutUserShortInfo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/constraintLayoutIdentifyingBox"
+      android:layout_width="@dimen/user_short_info.constraint_layout.identifying_box.width"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/user_short_info.constraint_layout.identifying_box.padding.top"
+      android:paddingBottom="@dimen/user_short_info.constraint_layout.identifying_box.padding.bottom"
+      android:paddingLeft="@dimen/user_short_info.constraint_layout.identifying_box.padding.left"
+      android:paddingRight="@dimen/user_short_info.constraint_layout.identifying_box.padding.right"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+        android:id="@+id/imageViewIconUser"
+        android:layout_width="@dimen/user_short_info.image_view.icon_user.view_size"
+        android:layout_height="@dimen/user_short_info.image_view.icon_user.view_size"
+        app:image_url='@{shortInfo.imageUser}'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+      <TextView
+        android:id="@+id/textViewNameUser"
+        android:layout_width="@dimen/user_short_info.text_view.name_user.width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/user_short_info.text_view.name_user.margin.start"
+        android:layout_marginLeft="@dimen/user_short_info.text_view.name_user.margin.left"
+        android:text='@{shortInfo.fullNameUser}'
+        android:textColor="@color/user_short_info.text_view.name_user.text"
+        android:textSize="@dimen/user_short_info.text_view.name_user.size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageViewIconUser"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/constraintLayoutShortInfo"
+      android:layout_width="@dimen/user_short_info.recycler_view.short_info.width"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/user_short_info.recycler_view.short_info.padding.top"
+      app:adapter='@{shortInfo.shortInfoAdapter}'
+      app:divider_res='@{R.drawable.divider_info_list}'
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/constraintLayoutIdentifyingBox"/>
+
+  </android.support.constraint.ConstraintLayout>
+</layout>
+

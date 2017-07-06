@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+      name="paddingLeft"
+      type="Integer"/>
+    <variable
+      name="paddingRight"
+      type="Integer"/>
+    <variable
+      name="colorSeparator"
+      type="Integer"/>
+    <variable
+      name="visible"
+      type="Boolean"/>
+  </data>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    app:color_separator='@{colorSeparator}'
+    app:padding_left='@{paddingLeft}'
+    app:padding_right='@{paddingRight}'
+    app:gone='@{visible}'/>
+</layout>
