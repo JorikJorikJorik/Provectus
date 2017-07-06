@@ -28,8 +28,8 @@ public class FormationGroupUtils {
 
   private <T extends BaseAdapter> GroupRecyclerModel formationGroupModel(String subHeader, int iconGroup, T adapter) {
     GroupRecyclerModel<T> groupModel = new GroupRecyclerModel<>();
-    groupModel.setIconGroup(iconGroup);
     groupModel.setSubHeader(subHeader);
+    groupModel.setIconGroup(iconGroup);
     groupModel.setAdapterGroup(adapter);
     return groupModel;
   }

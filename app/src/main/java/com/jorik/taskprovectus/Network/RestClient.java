@@ -2,6 +2,7 @@ package com.jorik.taskprovectus.Network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.jorik.taskprovectus.Utils.DateUtils;
 import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -12,7 +13,7 @@ public class RestClient {
 
   private static final int TIME_TIME = 60;
   private static final String BASE_URL = "https://randomuser.me/api/";
-  private static Gson gsonDate = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
+  private static Gson gsonDate = new GsonBuilder().setDateFormat(DateUtils.PARSE_DATE_GSON).create();
 
   public static <T> T createService(Class<T> service) {
 

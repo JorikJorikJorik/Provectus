@@ -23,6 +23,7 @@ import com.jorik.taskprovectus.Model.Enum.PermissionState;
 import com.jorik.taskprovectus.View.Activity.BaseActivity;
 import com.jorik.taskprovectus.View.View.PermissionDialog;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PermissionUtils {
@@ -35,11 +36,29 @@ public class PermissionUtils {
   private PermissionTableUtils mPermissionTableUtils;
   private AlertDialog explainPermissionDialog;
 
+  public PermissionUtils(Context context, DataBaseUtils dataBaseUtils) {
+    mContext = context;
+    resourceUtils = ResourceUtils.with(mContext);
+    mPermissionTableUtils = new PermissionTableUtils(dataBaseUtils);
+  }
+
   public PermissionUtils(Context context, ArrayList<String> permissions, DataBaseUtils dataBaseUtils) {
     mContext = context;
     permissionList = permissions;
     resourceUtils = ResourceUtils.with(mContext);
     mPermissionTableUtils = new PermissionTableUtils(dataBaseUtils);
+  }
+
+  public boolean checkPermission(String permission) {
+    if (VERSION.SDK_INT >= VERSION_CODES.M) {
+      boolean isGranted = isGrantedPermission(permission);
+      if (!isGranted) {
+        permissionList = new ArrayList<>(Collections.singletonList(permission));
+        workUtils();
+      }
+      return isGranted;
+    }
+    return true;
   }
 
   public void workUtils() {
@@ -58,7 +77,7 @@ public class PermissionUtils {
     } else {
       for (PermissionTable itemTable : permissionTable) {
         String namePermission = itemTable.getNamePermission();
-        if (!permissionList.contains(namePermission))
+        if (!permissionList.contains(namePermission) && !mPermissionTableUtils.existValue(namePermission))
           mPermissionTableUtils.createValue(namePermission);
       }
     }
@@ -109,7 +128,7 @@ public class PermissionUtils {
     }
   }
 
-  public void explainPermissionDialog(int warnMessageId, int positiveMessageId, Runnable event) {
+  private void explainPermissionDialog(int warnMessageId, int positiveMessageId, Runnable event) {
     if (explainPermissionDialog != null)
       explainPermissionDialog.dismiss();
 

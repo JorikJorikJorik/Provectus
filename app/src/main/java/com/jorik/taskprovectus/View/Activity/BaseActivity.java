@@ -20,16 +20,11 @@ public abstract class BaseActivity<F extends BaseFragment> extends AppCompatActi
 
   public abstract F getFragment();
 
-  public abstract boolean isHomeButton();
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(getLayoutId());
-
-    if (getSupportActionBar() != null) {
-      getSupportActionBar().setDisplayHomeAsUpEnabled(isHomeButton());
-    }
 
     fragment = getFragment();
 
@@ -53,6 +48,12 @@ public abstract class BaseActivity<F extends BaseFragment> extends AppCompatActi
         return true;
     }
     return super.onOptionsItemSelected(item);
+  }
+
+  public void isHomeButton(boolean needed){
+    if (getSupportActionBar() != null) {
+      getSupportActionBar().setDisplayHomeAsUpEnabled(needed);
+    }
   }
 
   @Override

@@ -18,8 +18,9 @@
   </data>
 
   <View
+    android:id="@+id/viewSeparator"
     android:layout_width="match_parent"
-    android:layout_height="1dp"
+    android:layout_height="@dimen/separator.view.view_separator.height"
     app:color_separator='@{colorSeparator}'
     app:padding_left='@{paddingLeft}'
     app:padding_right='@{paddingRight}'

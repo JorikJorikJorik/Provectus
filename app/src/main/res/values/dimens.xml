@@ -130,5 +130,9 @@
   <dimen name="item_info_user.image_view.action_icon.padding.left">20dp</dimen>
   <dimen name="item_info_user.image_view.action_icon.padding.right">20dp</dimen>
 
+  <!-- separator -->
+
+  <dimen name="separator.view.view_separator.height">1dp</dimen>
+
 
 </resources>

@@ -70,9 +70,16 @@
   <string name="random_users.error.repeat">Repeat</string>
   <string name="random_users.toolbar.title">Random Users</string>
 
-  <!-- info user adapter -->
+  <!-- intent utils -->
 
-  <string name="info_user_adapter.intent.type.text_plain">text/plain</string>
-  <string name="info_user_adapter.intent.extra.text">Join our community, search random user!</string>
+  <string name="intent_utils.send_email.type.text_plain">text/plain</string>
+  <string name="intent_utils.send_email.extra.text">Join our community, search random user!</string>
+  <string name="intent_utils.send_email.progress">Send email…</string>
+
+  <!-- phone group -->
+
+  <string name="phone_group.second_data.phone">Phone</string>
+  <string name="phone_group.second_data.cell">Cell</string>
+
 
 </resources>

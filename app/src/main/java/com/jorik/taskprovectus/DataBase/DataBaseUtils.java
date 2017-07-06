@@ -1,6 +1,5 @@
 package com.jorik.taskprovectus.DataBase;
 
-import android.content.Context;
 import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.RealmQuery;

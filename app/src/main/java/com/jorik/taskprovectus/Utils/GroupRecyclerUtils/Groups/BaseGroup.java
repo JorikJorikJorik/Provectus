@@ -3,7 +3,7 @@ package com.jorik.taskprovectus.Utils.GroupRecyclerUtils.Groups;
 import android.content.Context;
 import com.jorik.taskprovectus.View.Adapter.BaseAdapter;
 
-public abstract class BaseGroup<T extends BaseAdapter, V> {
+public abstract class BaseGroup<V, T extends BaseAdapter> {
 
   private Context mContext;
   private V data;

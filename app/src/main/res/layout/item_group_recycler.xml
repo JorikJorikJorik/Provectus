@@ -13,7 +13,6 @@
     android:id="@+id/constraintLayoutInfoUserBox"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/item_group_recycler.constraint_layout.info_user_box.padding.bottom"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/constraintLayoutIdentifyingBox">

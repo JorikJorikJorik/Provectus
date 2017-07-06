@@ -3,6 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <data>
+    <import type="com.jorik.taskprovectus.Utils.StringUtils"/>
     <variable
       name="user"
       type="com.jorik.taskprovectus.Network.DTO.UserDataDTO"/>
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/item_user.text_view.name.margin.left"
         android:layout_marginLeft="@dimen/item_user.text_view.name.margin.left"
-        android:text='@{String.format("%s %s", user.name.first, user.name.last)}'
+        android:text='@{String.format("%s %s", StringUtils.firstLatterToUpper(user.name.first), StringUtils.firstLatterToUpper(user.name.last))}'
         android:textColor="@color/item_user.text_view.name.text"
         android:textSize="@dimen/item_user.text_view.name.size"
         app:layout_constraintBottom_toBottomOf="parent"

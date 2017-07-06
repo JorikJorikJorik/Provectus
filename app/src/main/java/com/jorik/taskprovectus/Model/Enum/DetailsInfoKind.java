@@ -5,5 +5,6 @@ public enum  DetailsInfoKind {
   EMAIL,
   GANDER,
   BIRTHDAY,
-  LOCATION
+  LOCATION,
+  NATIONALITY
 }

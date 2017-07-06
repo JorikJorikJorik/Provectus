@@ -32,8 +32,4 @@ public class RandUsersActivity extends BaseActivity<RandUsersFragment> {
     return RandUsersFragment.getInstance();
   }
 
-  @Override
-  public boolean isHomeButton() {
-    return false;
-  }
 }

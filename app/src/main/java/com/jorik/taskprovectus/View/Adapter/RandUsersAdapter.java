@@ -5,16 +5,20 @@ import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import com.jorik.taskprovectus.BR;
 import com.jorik.taskprovectus.Network.DTO.UserDataDTO;
 import com.jorik.taskprovectus.R;
 import com.jorik.taskprovectus.View.Activity.BaseActivity;
+import com.jorik.taskprovectus.View.Activity.UserInfoActivity;
 import com.jorik.taskprovectus.View.Fragment.UserShortInfoBottomSheet;
 import com.jorik.taskprovectus.databinding.ItemUserBinding;
 import java.util.List;
 
 public class RandUsersAdapter extends BaseAdapter<UserDataDTO, ItemUserBinding> {
+
+  public static final String USER_INFO_EXTRA = "user_info_extra";
 
   private Context mContext;
   private ItemUserBinding binding;
@@ -55,6 +59,15 @@ public class RandUsersAdapter extends BaseAdapter<UserDataDTO, ItemUserBinding> 
         bottomSheet.show(((BaseActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
       }
       return true;
+    });
+
+    binding.constraintLayoutItemUser.setOnClickListener(v -> {
+      UserDataDTO checkItem = getListData().get(position);
+      if (checkItem != null) {
+        Intent userInfoIntent = new Intent(mContext, UserInfoActivity.class);
+        userInfoIntent.putExtra(USER_INFO_EXTRA, checkItem);
+        mContext.startActivity(userInfoIntent);
+      }
     });
   }
 

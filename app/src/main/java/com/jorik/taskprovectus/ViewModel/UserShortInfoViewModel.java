@@ -1,5 +1,7 @@
 package com.jorik.taskprovectus.ViewModel;
 
+import static com.jorik.taskprovectus.Utils.StringUtils.firstLatterToUpper;
+
 import android.content.Context;
 import android.databinding.ObservableField;
 import com.jorik.taskprovectus.Network.DTO.UserDataDTO;
@@ -19,7 +21,7 @@ public class UserShortInfoViewModel {
   public UserShortInfoViewModel(Context context, UserDataDTO userDataDTO) {
     mContext = context;
     imageUser = new ObservableField<>(userDataDTO.getPicture().getThumbnail());
-    fullNameUser = new ObservableField<>(String.format("%s %s", userDataDTO.getName().getFirst(), userDataDTO.getName().getLast()));
+    fullNameUser = new ObservableField<>(String.format("%s %s", firstLatterToUpper(userDataDTO.getName().getFirst()), firstLatterToUpper(userDataDTO.getName().getLast())));
     shortInfoAdapter = new ObservableField<>(formationAdapter(userDataDTO));
   }
 

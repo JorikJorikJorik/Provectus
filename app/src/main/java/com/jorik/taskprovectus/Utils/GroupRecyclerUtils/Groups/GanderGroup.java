@@ -1,6 +1,7 @@
 package com.jorik.taskprovectus.Utils.GroupRecyclerUtils.Groups;
 
-import static com.jorik.taskprovectus.Model.Enum.DetailsInfoKind.EMAIL;
+import static com.jorik.taskprovectus.Model.Enum.DetailsInfoKind.GANDER;
+import static com.jorik.taskprovectus.Utils.StringUtils.firstLatterToUpper;
 
 import android.content.Context;
 import com.jorik.taskprovectus.Model.POJO.InfoUserModel;
@@ -9,9 +10,9 @@ import com.jorik.taskprovectus.R;
 import com.jorik.taskprovectus.View.Adapter.InfoUserAdapter;
 import java.util.Collections;
 
-public class EmailGroup extends BaseGroup<UserDataDTO, InfoUserAdapter> {
+public class GanderGroup extends BaseGroup<UserDataDTO, InfoUserAdapter> {
 
-  public EmailGroup(Context context, UserDataDTO data) {
+  public GanderGroup(Context context, UserDataDTO data) {
     super(context, data);
   }
 
@@ -22,13 +23,12 @@ public class EmailGroup extends BaseGroup<UserDataDTO, InfoUserAdapter> {
 
   @Override
   public Integer formationIcon() {
-    return R.mipmap.ic_email;
+    return R.mipmap.ic_gander;
   }
 
   @Override
   public InfoUserAdapter formationAdapter() {
-    InfoUserModel infoUserModelEmail = new InfoUserModel(getData().getEmail(), null, R.mipmap.ic_send_email);
-    return new InfoUserAdapter(getContext(), Collections.singletonList(infoUserModelEmail), EMAIL);
+    InfoUserModel infoUserModelGander = new InfoUserModel(firstLatterToUpper(getData().getGender()), null, null);
+    return new InfoUserAdapter(getContext(), Collections.singletonList(infoUserModelGander), GANDER);
   }
-
 }

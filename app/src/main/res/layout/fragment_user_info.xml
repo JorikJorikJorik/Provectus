@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</LinearLayout>
+  <data>
+    <import type="com.jorik.taskprovectus.R"/>
+    <variable
+      name="userInfo"
+      type="com.jorik.taskprovectus.ViewModel.UserInfoViewModel"/>
+  </data>
+
+  <android.support.design.widget.CoordinatorLayout
+    android:id="@+id/coordinatorLayoutUserInfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/recyclerViewUserInfo"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:adapter='@{userInfo.adapterUserInfo}'
+      app:divider_res='@{R.drawable.divider_info_list}'/>
+
+
+  </android.support.design.widget.CoordinatorLayout>
+</layout>

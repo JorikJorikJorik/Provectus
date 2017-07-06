@@ -19,7 +19,7 @@ public class PermissionTableUtils extends BasicTableUtils<PermissionTable> {
   }
 
   public void updatePermissionValue(String permission, PermissionState state) {
-    RealmQuery<PermissionTable> query = searchTable().equalTo(PERMISSION_NAME_FIELD, permission);
+    RealmQuery<PermissionTable> query = searchPermission(permission);
     mDataBaseUtils.updateValue(() -> {
       if (query != null) {
         query.findFirst().setPermissionStateValue(state.getValue());
@@ -41,6 +41,14 @@ public class PermissionTableUtils extends BasicTableUtils<PermissionTable> {
   @Override
   protected RealmQuery<PermissionTable> searchTable() {
     return mDataBaseUtils.searchTable(PermissionTable.class);
+  }
+
+  private RealmQuery<PermissionTable> searchPermission(String permission) {
+    return mDataBaseUtils.searchTable(PermissionTable.class).equalTo(PERMISSION_NAME_FIELD, permission);
+  }
+
+  public boolean existValue(String permission) {
+    return searchPermission(permission) != null;
   }
 
 }
