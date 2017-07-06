@@ -5,8 +5,6 @@ import android.databinding.InverseBindingListener;
 import android.graphics.Bitmap;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.Drawable;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -21,15 +19,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.jorik.taskprovectus.Model.Enum.AccessDirectoryKind;
-import com.jorik.taskprovectus.PicassoTransformation.CircleTransformer;
+import com.jorik.taskprovectus.Picasso.PicassoUtils;
 import com.jorik.taskprovectus.R;
-import com.jorik.taskprovectus.Utils.CachePhotoUtils;
 import com.jorik.taskprovectus.Utils.ImageUtils;
 import com.jorik.taskprovectus.Utils.ResourceUtils;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Picasso.LoadedFrom;
-import com.squareup.picasso.Target;
 
 public class BindingAdapter {
 
@@ -39,7 +32,7 @@ public class BindingAdapter {
   @android.databinding.BindingAdapter(value = {"adapter", "divider_res"}, requireAll = false)
   public static <T extends Adapter> void recyclerViewAdapter(RecyclerView recyclerView, T adapter, int dividerRes) {
     if (dividerRes != 0) {
-      Drawable drawableDivider = VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP ? recyclerView.getContext().getDrawable(dividerRes) : recyclerView.getContext().getResources().getDrawable(dividerRes);
+      Drawable drawableDivider = ResourceUtils.with(recyclerView.getContext()).drawable(dividerRes);
       if (drawableDivider != null) {
         DividerItemDecoration itemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
         itemDecoration.setDrawable(drawableDivider);
@@ -65,36 +58,9 @@ public class BindingAdapter {
   }
 
   @android.databinding.BindingAdapter(value = {"image_url", "image_need_cache"}, requireAll = false)
-  public static void loadImagePicasso(ImageView imageView, String url, boolean needCache) {
-
-    CachePhotoUtils cachePhotoUtils = new CachePhotoUtils(imageView.getContext(), AccessDirectoryKind.KIND);
-
-    Picasso
-      .with(imageView.getContext())
-      .load(url)
-      .transform(new CircleTransformer(true))
-      .into(new Target() {
-        @Override
-        public void onBitmapLoaded(Bitmap bitmap, LoadedFrom from) {
-          if (needCache)
-            cachePhotoUtils.loadBitmap(bitmap, url);
-          imageView.setImageBitmap(bitmap);
-        }
-
-        @Override
-        public void onBitmapFailed(Drawable errorDrawable) {
-        }
-
-        @Override
-        public void onPrepareLoad(Drawable placeHolderDrawable) {
-          if (needCache) {
-            Bitmap cacheBitmap = null;
-            if (url != null) cacheBitmap = cachePhotoUtils.uploadBitmap(url);
-            if (cacheBitmap != null) imageView.setImageBitmap(cacheBitmap);
-            else imageView.setImageResource(R.mipmap.ic_account_image_default);
-          } else imageView.setImageResource(R.mipmap.ic_account_image_default);
-        }
-      });
+  public static void loadImagePicasso(View view, String url, boolean needCache) {
+    PicassoUtils picassoUtils = new PicassoUtils(view);
+    picassoUtils.loadImageAndCache(url, needCache);
   }
 
   @android.databinding.BindingAdapter("error")
@@ -212,6 +178,5 @@ public class BindingAdapter {
     view.setPadding(paddingLeft, view.getPaddingTop(), paddingRight, view.getPaddingBottom());
     view.setBackgroundColor(colorSeparator);
   }
-
 }
 

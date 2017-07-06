@@ -3,6 +3,7 @@ package com.jorik.taskprovectus.View.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class UserInfoFragment extends BaseFragment<FragmentUserInfoBinding, User
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    setHasOptionsMenu(true);
     mUserDataDTO = getArguments().getParcelable(USER_DATA_ARGS);
   }
 
@@ -36,6 +38,16 @@ public class UserInfoFragment extends BaseFragment<FragmentUserInfoBinding, User
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     return super.onCreateView(inflater, container, savedInstanceState);
+  }
+
+  @Override
+  public Toolbar toolbar() {
+    return getBinding().toolbarInfoUser;
+  }
+
+  @Override
+  public boolean isHomeButton() {
+    return true;
   }
 
   @Override

@@ -2,6 +2,9 @@ package com.jorik.taskprovectus.Utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -33,6 +36,10 @@ public class ResourceUtils {
 
   public int color(int resourceId) {
     return ContextCompat.getColor(mContext, resourceId);
+  }
+
+  public Drawable drawable(int resourceId){
+    return VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP ? mContext.getDrawable(resourceId) : mContext.getResources().getDrawable(resourceId);
   }
 
   public String[] stringArray(int resourceId) {

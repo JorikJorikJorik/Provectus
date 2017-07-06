@@ -1,5 +1,7 @@
 package com.jorik.taskprovectus.ViewModel;
 
+import static com.jorik.taskprovectus.Utils.StringUtils.firstLatterToUpper;
+
 import android.content.Context;
 import android.databinding.ObservableField;
 import com.jorik.taskprovectus.Network.DTO.UserDataDTO;
@@ -14,13 +16,23 @@ import com.jorik.taskprovectus.View.Adapter.GroupRecyclerAdapter;
 
 public class UserInfoViewModel extends BaseViewModel {
 
+  public final ObservableField<String> imageUser;
   public final ObservableField<GroupRecyclerAdapter> adapterUserInfo;
 
   private Context mContext;
+  private UserDataDTO mUserDataDTO;
 
   public UserInfoViewModel(Context context, UserDataDTO dataDTO) {
     mContext = context;
+    mUserDataDTO = dataDTO;
+    imageUser = new ObservableField<>(dataDTO.getPicture().getLarge());
     adapterUserInfo = new ObservableField<>(formationAdapter(dataDTO));
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    updateTitleToolbar(String.format("%s %s", firstLatterToUpper(mUserDataDTO.getName().getFirst()), firstLatterToUpper(mUserDataDTO.getName().getLast())));
   }
 
   private GroupRecyclerAdapter formationAdapter(UserDataDTO dataDTO) {

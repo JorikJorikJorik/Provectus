@@ -134,5 +134,11 @@
 
   <dimen name="separator.view.view_separator.height">1dp</dimen>
 
+  <!-- user info -->
+
+  <dimen name="user_info.toolbar.info_user.margin.top">5dp</dimen>
+  <dimen name="user_info.toolbar.info_user.margin.bottom">5dp</dimen>
+  <dimen name="user_info.toolbar.info_user.title.margin.start">25dp</dimen>
+
 
 </resources>

@@ -14,12 +14,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.design.widget.AppBarLayout
+      android:id="@+id/appBarLayoutInfoUser"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:theme="@style/AppTheme.AppBarOverlay">
+
+      <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarInfoUser"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/user_info.toolbar.info_user.margin.top"
+        android:layout_marginBottom="@dimen/user_info.toolbar.info_user.margin.bottom"
+        app:image_need_cache='@{true}'
+        app:image_url='@{userInfo.imageUser}'
+        app:theme="@style/AppTheme.PopupOverlay"
+        app:titleMarginStart="@dimen/user_info.toolbar.info_user.title.margin.start"/>
+
+    </android.support.design.widget.AppBarLayout>
+
     <android.support.v7.widget.RecyclerView
       android:id="@+id/recyclerViewUserInfo"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       app:adapter='@{userInfo.adapterUserInfo}'
-      app:divider_res='@{R.drawable.divider_info_list}'/>
+      app:divider_res='@{R.drawable.divider_info_list}'
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
   </android.support.design.widget.CoordinatorLayout>

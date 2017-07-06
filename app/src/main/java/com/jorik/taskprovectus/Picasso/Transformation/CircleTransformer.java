@@ -1,4 +1,4 @@
-package com.jorik.taskprovectus.PicassoTransformation;
+package com.jorik.taskprovectus.Picasso.Transformation;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

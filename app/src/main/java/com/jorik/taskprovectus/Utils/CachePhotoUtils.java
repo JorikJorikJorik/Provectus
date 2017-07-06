@@ -18,7 +18,6 @@ public class CachePhotoUtils {
     mAccessDirectoryKind = accessDirectoryKind;
   }
 
-
   public void loadBitmap(Bitmap bitmap, String url) {
     mFileUtils.loadPhotoByBitmap(bitmap, url, mAccessDirectoryKind);
   }
